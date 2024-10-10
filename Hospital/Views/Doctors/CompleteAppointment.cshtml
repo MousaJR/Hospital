@@ -1,0 +1,30 @@
+﻿@model Hospital.Models.Doctor
+
+<form method="post">
+    <legend>
+        <h1>Complete Appointment With @Model.Name </h1>
+    </legend>
+    <div>
+        <label for="inputName" class="form-label mt-4">Patient Name:</label>
+        <input type="text" name="patientName" class="form-control" id="inputName" required>
+    </div>
+    <div>
+        <label for="inputDate" class="form-label mt-4">Appointment Date:</label>
+        <input type="date" name="appointmentDate" class="form-control" id="inputDate" required>
+    </div>
+    <div>
+        <label for="inputTime" class="form-label mt-4">Appointment Time:</label>
+        <input type="time" name="appointmentTime" class="form-control" id="inputTime" required>
+    </div>
+    <input type="hidden" name="name" value="@Model.Name" /> <!-- Hidden input to pass doctor name -->
+    <div class="mt-5">
+        <button type="submit" class="btn btn-info btn-outline-dark">Complete Appointment</button>
+    </div>
+</form>
+
+@if (ViewBag.SuccessMessage != null)
+{
+    <div class="alert alert-success mt-3">
+        @ViewBag.SuccessMessage
+    </div>
+}

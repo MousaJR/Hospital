@@ -1,0 +1,19 @@
+﻿<h1>Book Appointment</h1>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    @foreach (var item in Model)
+    {
+        <div class="col">
+            <div class="card h-auto table-hover">
+                <img src="~/images/@item.Img" class="card-img-top card-header" alt="...">
+                <div class="card-body">
+                    <label hidden>@item.Id</label>
+                    <h5 class="card-title">@item.Name</h5>
+                    <p class="card-text">@item.Specialization</p>
+                </div>
+                <div class="card-body">
+                    <a class="btn btn-info btn-outline-dark" href="/Doctors/CompleteAppointment?name=@item.Name">Book Appointment</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
